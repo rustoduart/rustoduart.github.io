@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中考志愿填报专家系统，提供中考分数匹配、学校推荐及升学路径规划，帮助家长和学生科学选择理想高中。">
+    <meta name="keywords" content="中考志愿填报,中考分数匹配,高中学校推荐,升学规划,中考志愿">
+    <title>中考志愿填报 - 分数匹配与升学路径规划专家</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff9800;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #004494;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        /* Search Widget */
+        .search-widget {
+            background: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,86,179,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group select {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            min-width: 200px;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        /* School List Cards */
+        .school-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .school-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .school-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-color);
+        }
+
+        .school-rank {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--border-color);
+            line-height: 1;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .school-rank.top-3 {
+            color: var(--accent-color);
+        }
+
+        .school-info {
+            flex: 1;
+        }
+
+        .school-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .school-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .school-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .school-meta i {
+            margin-right: 4px;
+        }
+
+        .school-tags {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .tag.hot {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .rank-list {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-item:hover {
+            background: var(--secondary-color);
+        }
+
+        .rank-num {
+            width: 30px;
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .rank-num.top {
+            color: var(--accent-color);
+        }
+
+        .rank-name {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .rank-score {
+            margin-left: auto;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Tips Section */
+        .tips-box {
+            background: #f8faff;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .tips-box h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .tips-box ul {
+            padding-left: 20px;
+        }
+
+        .tips-box li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .search-widget {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-group input, .form-group select {
+                min-width: 100%;
+            }
+
+            .school-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-meta {
+                justify-content: center;
+            }
+
+            .school-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            中考智选
+            <span>升学规划专家</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">志愿填报</a></li>
+                <li><a href="#">分数线查询</a></li>
+                <li><a href="#">高中排名</a></li>
+                <li><a href="#">政策解读</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-primary">免费测评</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>科学规划升学路径，找到最适合的高中</h1>
+            <p>基于大数据与历年录取数据，为您精准匹配理想学校，避免滑档风险。</p>
+            
+            <div class="search-widget">
+                <div class="form-group">
+                    <label for="province">省份</label>
+                    <select id="province">
+                        <option value="guangdong">广东省</option>
+                        <option value="jiangsu">江苏省</option>
+                        <option value="zhejiang">浙江省</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="score">中考预估分数</label>
+                    <input type="number" id="score" placeholder="例如：680">
+                </div>
+                <div class="form-group">
+                    <label for="district">所在区县</label>
+                    <select id="district">
+                        <option value="all">全市范围</option>
+                        <option value="central">中心城区</option>
+                        <option value="suburb">郊区县</option>
+                    </select>
+                </div>
+                <button class="btn-primary" onclick="searchSchools()">开始匹配</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <section class="main-content">
+            <div class="section-title">
+                <h2>热门学校推荐</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+
+            <div class="school-list" id="schoolList">
+                <!-- Card 1 -->
+                <article class="school-card">
+                    <div class="school-rank top-3">1</div>
+                    <div class="school-info">
+                        <h3 class="school-name">市第一中学</h3>
+                        <div class="school-meta">
+                            <span>类型：省级示范高中</span>
+                            <span>地址：市中心教育园区</span>
+                        </div>
+                        <div class="school-tags">
+                            <span class="tag hot">近三年平均分：690</span>
+                            <span class="tag">一本率 85%</span>
+                            <span class="tag">国际部</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="school-card">
+                    <div class="school-rank top-3">2</div>
+                    <div class="school-info">
+                        <h3 class="school-name">实验高级中学</h3>
+                        <div class="school-meta">
+                            <span>类型：重点高中</span>
+                            <span>地址：滨江区</span>
+                        </div>
+                        <div class="school-tags">
+                            <span class="tag">近三年平均分：675</span>
+                            <span class="tag">特色课程班</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="school-card">
+                    <div class="school-rank top-3">3</div>
+                    <div class="school-info">
+                        <h3 class="school-name">外国语学校</h3>
+                        <div class="school-meta">
+                            <span>类型：特色示范校</span>
+                            <span>地址：高新区</span>
+                        </div>
+                        <div class="school-tags">
+                            <span class="tag">近三年平均分：665</span>
+                            <span class="tag">多语种教学</span>
+                            <span class="tag">艺术特长</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="school-card">
+                    <div class="school-rank">4</div>
+                    <div class="school-info">
+                        <h3 class="school-name">第二高级中学</h3>
+                        <div class="school-meta">
+                            <span>类型：市级重点</span>
+                            <span>地址：老城区</span>
+                        </div>
+                        <div class="school-tags">
+                            <span class="tag">近三年平均分：640</span>
+                            <span class="tag">体育传统校</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <!-- Rank List -->
+            <div class="rank-box">
+                <div class="section-title" style="border:none; padding-bottom:0; margin-bottom:16px;">
+                    <h2>全省高中排名</h2>
+                </div>
+                <div class="rank-list">
+                    <div class="rank-item">
+                        <span class="rank-num top">1</span>
+                        <span class="rank-name">市第一中学</span>
+                        <span class="rank-score">690</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-num top">2</span>
+                        <span class="rank-name">实验高级中学</span>
+                        <span class="rank-score">675</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-num top">3</span>
+                        <span class="rank-name">外国语学校</span>
+                        <span class="rank-score">665</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-num">4</span>
+                        <span class="rank-name">第二高级中学</span>
+                        <span class="rank-score">640</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank-num">5</span>
+                        <span class="rank-name">第三高级中学</span>
+                        <span class="rank-score">630</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="tips-box">
+                <h4>填报志愿小贴士</h4>
+                <ul>
+                    <li>注意“冲稳保”原则，合理分配志愿梯度。</li>
+                    <li>关注学校当年的招生计划是否有变化。</li>
+                    <li>了解学校的住宿条件与食堂环境。</li>
+                    <li>避开“大小年”现象，参考往年波动。</li>
+                </ul>
+            </div>
+
+            <!-- Promo -->
+            <div style="background: var(--primary-color); color: white; padding: 24px; border-radius: 8px; text-align: center;">
+                <h3 style="margin-bottom: 10px;">专业志愿咨询</h3>
+                <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.9;">资深老师一对一免费指导</p>
+                <button class="btn-primary" style="background: white; color: var(--primary-color); width: 100%;">立即预约</button>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
+            <a href="#">联系合作</a>
+        </div>
+        <p>&copy; 2023 中考智选升学规划平台. All rights reserved.</p>
+        <p style="font-size: 12px; margin-top: 10px; color: #999;">本站数据仅供参考，具体以当地教育考试院公布为准。</p>
+    </div>
+</footer>
+
+<script>
+    function searchSchools() {
+        const score = document.getElementById('score').value;
+        const province = document.getElementById('province').value;
+        
+        if (!score) {
+            // Simple validation feedback
+            const input = document.getElementById('score');
+            input.style.borderColor = '#ff9800';
+            input.placeholder = '请输入您的分数';
+            setTimeout(() => {
+                input.style.borderColor = '#e0e0e0';
+                input.placeholder = '例如：680';
+            }, 2000);
+            return;
+        }
+
+        // Simulate search loading state
+        const btn = document.querySelector('.search-widget .btn-primary');
+        const originalText = btn.textContent;
+        btn.textContent = '匹配中...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            // In a real app, this would redirect or filter the list
+            alert(`正在为您匹配 [${province}] 分数段 ${score} 分左右的高中学校...\n（演示功能：此处应显示匹配结果列表）`);
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
