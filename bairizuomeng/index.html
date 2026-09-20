@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白日做梦打一生肖 - 生肖谜语解析与趣味测试</title>
+    <meta name="description" content="白日做梦打一生肖谜底是什么？本文为您详细解析这句谜语的含义、文化背景，并提供多种趣味生肖测试与趣味问答，助您解开谜题。">
+    <meta name="keywords" content="白日做梦打一生肖,生肖谜语,趣味测试,谜底解析,十二生肖">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --bg-color: #FFF8F0;
+            --card-bg: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --accent-color: #FFD700;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Answer Section */
+        .answer-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 50px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .answer-box {
+            display: inline-block;
+            background: var(--bg-color);
+            padding: 30px 50px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .answer-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .answer-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .answer-desc {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid Layout for Content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .riddle-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .riddle-list li:last-child {
+            border-bottom: none;
+        }
+
+        .riddle-text {
+            font-weight: 500;
+        }
+
+        .riddle-answer {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 0.9rem;
+            background: #fff3e0;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #aaa;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* SVG Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eee;
+            color: #555;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>谜</span> 生肖解析
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">谜语大全</a></li>
+                    <li><a href="#">趣味测试</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>白日做梦打一生肖</h1>
+            <p>探索这句经典谜语的深层含义，解析其背后的生肖逻辑与趣味文化。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 核心答案区 -->
+        <section class="answer-section">
+            <h2>谜底揭晓</h2>
+            <div class="answer-box">
+                <span class="answer-label">谜底生肖</span>
+                <span class="answer-value">鼠</span>
+            </div>
+            <p class="answer-desc">
+                “白日做梦”通常指不切实际的幻想。在十二生肖的排序与习性中，<strong>鼠</strong>（子鼠）是生肖之首，且在传说中具有夜行性，常在夜间活动，白天多在洞中休息，与“白日”形成鲜明对比。因此，从习性上推测，此谜底多为<strong>鼠</strong>。此外，也有说法认为“白日”指太阳（日），与“鼠”同属“子”时（23:00-01:00），寓意在白天（日）睡觉，故为鼠。
+            </p>
+        </section>
+
+        <!-- 内容网格 -->
+        <div class="content-grid">
+            
+            <!-- 左侧主要内容 -->
+            <div class="main-content">
+                <section>
+                    <div class="section-title">
+                        <h2>谜语文化解析</h2>
+                        <p>为什么是鼠？让我们从字面和习性两个角度深入分析。</p>
+                    </div>
+                    
+                    <article class="card">
+                        <h3>习性角度：昼伏夜出</h3>
+                        <p>十二生肖中的动物大多具有一定的代表性。在谜语中，常利用动物的生物习性来扣合谜面。老鼠天性胆小，白天通常躲在阴暗的洞穴中休息，避开天敌，只有在夜间出来觅食。因此，当谜面出现“白日”时，恰恰描述了其不活动的状态，而“做梦”则暗示其处于睡眠休息的潜意识状态。这种“白天睡觉”的特征，使其成为最符合字面描述的生肖之一。</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>时辰角度：子时对应</h3>
+                        <p>中国传统文化将一天划分为十二个时辰，每个时辰对应一个地支。晚上23:00到01:00被称为“子时”，对应的生肖正是<strong>鼠</strong>。在谜语中，“白日”可以理解为“日”，而“鼠”对应“子”。在十二地支中，“子”与“日”在逻辑上存在某种时空的对应关系（子为夜之极，日为昼之极）。因此，从五行与时辰的角度来看，白日与子鼠也有着内在的联系。</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>其他趣味解读</h3>
+                        <p>除了鼠之外，对于“白日做梦”还有其他有趣的解读视角。例如，<strong>马</strong>（午马）对应中午11:00-13:00，太阳最烈之时，但“做梦”通常指睡意，故不太贴切。<strong>龙</strong>（辰龙）虽然掌管降雨，但缺乏“睡”的特征。相比之下，鼠的“昼伏夜出”和“子时”属性在谜语逻辑中最为严密和常见。</p>
+                    </article>
+                </section>
+
+                <!-- 相关谜语推荐 -->
+                <section>
+                    <div class="section-title">
+                        <h2>同类型趣味谜语</h2>
+                    </div>
+                    <div class="card">
+                        <ul class="riddle-list">
+                            <li>
+                                <span class="riddle-text">老鼠过街，人人喊打</span>
+                                <span class="riddle-answer">鼠</span>
+                            </li>
+                            <li>
+                                <span class="riddle-text">画蛇添足</span>
+                                <span class="riddle-answer">蛇</span>
+                            </li>
+                            <li>
+                                <span class="riddle-text">守株待兔</span>
+                                <span class="riddle-answer">兔</span>
+                            </li>
+                            <li>
+                                <span class="riddle-text">亡羊补牢</span>
+                                <span class="riddle-answer">羊</span>
+                            </li>
+                            <li>
+                                <span class="riddle-text">望子成龙</span>
+                                <span class="riddle-answer">龙</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 右侧侧边栏 -->
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>快速测试</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem; color: #666;">根据您的性格特征，测一测您最像哪个生肖？</p>
+                    <button onclick="alert('这是一个静态演示页面，实际功能需后端支持。')" style="width: 100%; padding: 12px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: background 0.3s;">开始性格测试</button>
+                </div>
+
+                <div class="card">
+                    <h3>热门标签</h3>
+                    <div style="margin-top: 10px;">
+                        <span class="tag">生肖运势</span>
+                        <span class="tag">谜语大全</span>
+                        <span class="tag">趣味问答</span>
+                        <span class="tag">传统文化</span>
+                        <span class="tag">脑筋急转弯</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>猜谜技巧</h3>
+                    <p style="font-size: 0.95rem; color: #666; margin-bottom: 10px;">解谜时要注意谜面中的动词和名词。例如“白日”强调时间，“做梦”强调状态。将关键词与生肖习性结合，往往能找到答案。</p>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- FAQ 常见问题 -->
+        <section style="margin-top: 50px;">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    白日做梦打一生肖还有其他答案吗？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>在常规谜语逻辑中，答案多为<strong>鼠</strong>。但如果从“日”字出发，也有人联想到与太阳有关的动物，但缺乏强有力的逻辑支撑。谜语的乐趣在于多角度思考，但最标准的答案通常是鼠。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    为什么老鼠排在生肖第一位？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>这源于中国古老的传说“子鼠丑牛”。在十二地支中，“子”代表夜半（23:00-01:00），是阴阳交替、万物复苏的时刻，老鼠在这一时段最为活跃，因此被排在首位。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    如何提高解谜能力？
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>多了解十二生肖的习性、象征意义以及相关的成语典故。熟悉这些背景知识后，在看到谜面时就能迅速调动大脑中的知识库，找到最合理的扣合点。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 生肖谜语大全. 保留所有权利。</p>
+            <p>本站内容仅供娱乐与文化参考，不构成任何专业建议。</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    
+    <script>
+        // 简单的 FAQ 折叠交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项（手风琴效果）
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项的状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
