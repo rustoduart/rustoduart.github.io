@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江苏卫视职来职往视频-求职面试实战技巧与职场精英访谈指南</title>
+    <meta name="description" content="江苏卫视职来职往视频官方展示页面。提供经典面试案例分析、职场生存法则、名企招聘需求解析及求职者与职场专家的精彩互动实录。">
+    <meta name="keywords" content="江苏卫视职来职往视频, 职来职往, 求职面试, 职场访谈, 面试技巧, 江苏卫视">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #b91c1c; /* 活力红，对应节目基调 */
+            --secondary-color: #1f2937;
+            --accent-color: #f59e0b;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #111827;
+            --text-light: #6b7280;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* 视频分类 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0 30px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            border-radius: 20px;
+            background-color: #e5e7eb;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag.active, .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 视频网格 */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 15px;
+        }
+
+        .views {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .duration {
+            font-size: 0.8rem;
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-light);
+        }
+
+        /* 面试技巧侧边栏 */
+        .content-split {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .tips-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .tips-list h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .tips-list p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .cta-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #9ca3af;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content-split {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* 简化移动端，实际项目需做汉堡菜单 */
+            }
+            
+            .filter-tags {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path><line x1="2" y1="20" x2="2" y2="20"></line></svg>
+                职来职往<span>资源站</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#videos">经典视频</a>
+                <a href="#guide">面试指南</a>
+                <a href="#employers">名企招聘</a>
+                <a href="#about">关于节目</a>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>江苏卫视职来职往视频</h1>
+            <p>汇聚十年职场真人秀精华，提供最真实的面试场景、最犀利的职场点评与最实用的求职技巧。</p>
+            <div style="margin-bottom: 30px;">
+                <a href="#videos" class="btn" style="background-color: var(--primary-color); color: white;">立即观看</a>
+                <a href="#guide" class="btn" style="background-color: transparent; border: 1px solid white; margin-left: 10px;">学习技巧</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>5000+</h3>
+                    <p>精彩面试案例</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>名企雇主资源</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10年</h3>
+                    <p>品牌积淀</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频内容区 -->
+    <main class="container">
+        
+        <!-- 分类筛选 -->
+        <section id="videos">
+            <div class="section-header">
+                <h2 class="section-title">热门面试视频</h2>
+                <div class="filter-tags">
+                    <span class="tag active">全部</span>
+                    <span class="tag">销售类</span>
+                    <span class="tag">互联网</span>
+                    <span class="tag">金融</span>
+                    <span class="tag">运营</span>
+                    <span class="tag">技术</span>
+                </div>
+            </div>
+
+            <!-- 视频列表 -->
+            <div class="video-grid">
+                <!-- 视频卡片 1 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/job1/400/225" alt="面试现场截图">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">销售类 | 12分钟</div>
+                        <h3 class="card-title">如何优雅地拒绝不合理的加班要求？销售冠军现场教你话术</h3>
+                        <p class="card-desc">面对面试官提出的“996”挑战，候选人如何既展现敬业精神，又坚守职业底线，获得HR的高度认可？</p>
+                        <div class="card-footer">
+                            <span class="views">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                2.3万次播放
+                            </span>
+                            <span class="duration">12:35</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 视频卡片 2 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/job2/400/225" alt="面试现场截图">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">互联网运营 | 18分钟</div>
+                        <h3 class="card-title">从零经验到运营总监：复盘我的三次关键面试经历</h3>
+                        <p class="card-desc">资深职场导师现场点评，剖析面试官最看重的三个核心能力：逻辑思维、抗压能力与团队协作。</p>
+                        <div class="card-footer">
+                            <span class="views">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                5.6万次播放
+                            </span>
+                            <span class="duration">18:20</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 视频卡片 3 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/job3/400/225" alt="面试现场截图">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">金融财会 | 15分钟</div>
+                        <h3 class="card-title">高薪岗位面试陷阱揭秘：当HR问“你最大的缺点是什么”</h3>
+                        <p class="card-desc">避开“致命回答”，学会将缺点转化为可改进的特质，展示真实的自我认知与成长潜力。</p>
+                        <div class="card-footer">
+                            <span class="views">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                1.8万次播放
+                            </span>
+                            <span class="duration">15:45</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 视频卡片 4 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/job4/400/225" alt="面试现场截图">
+                        <div class="play-overlay">
+                            <div class="play-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">产品经理 | 20分钟</div>
+                        <h3 class="card-title">产品经理面试高频题：如何设计一个用户增长方案？</h3>
+                        <p class="card-desc">现场模拟高压面试，专家点评数据思维与商业思维的结合，教你用结构化语言回答开放性问题。</p>
+                        <div class="card-footer">
+                            <span class="views">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                3.1万次播放
+                            </span>
+                            <span class="duration">20:10</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 60px;">
+                <a href="#" class="btn">加载更多视频</a>
+            </div>
+        </section>
+
+        <!-- 双栏布局：内容 + 侧边栏 -->
+        <div class="content-split">
+            <!-- 左侧：面试指南文章 -->
+            <section id="guide">
+                <div class="section-header" style="margin-top: 0;">
+                    <h2 class="section-title">面试技巧指南</h2>
+                </div>
+                
+                <article style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: var(--secondary-color);">面试着装：从“得体”到“专业”的进阶之路</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">
+                        在“江苏卫视职来职往”的舞台上，许多求职者因为着装不当错失良机。着装不仅仅是遮羞布，更是你职业素养的第一张名片。对于互联网行业，休闲商务风（Smart Casual）是主流；而对于金融、法律等传统行业，深色西装、领带或套装依然是安全牌。
+                    </p>
+                    <ul style="list-style: disc; padding-left: 20px; color: var(--text-main);">
+                        <li style="margin-bottom: 8px;">避免过于暴露或过于随意的服装（如短裤、拖鞋、破洞牛仔裤）。</li>
+                        <li style="margin-bottom: 8px;">保持指甲干净，发型整洁，体现对面试的尊重。</li>
+                        <li>配饰不宜过多，避免发出声响。</li>
+                    </ul>
+                </article>
+
+                <article style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: var(--secondary-color);">如何撰写一份让HR眼前一亮的简历？</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">
+                        简历是敲门砖。与其堆砌华丽的辞藻，不如用数据说话。在“职来职往”的求职者中，那些通过率高的简历往往都具备以下特点：结构清晰、重点突出、针对性强。
+                    </p>
+                    <div style="background: #f8fafc; padding: 15px; border-left: 4px solid var(--primary-color); border-radius: 4px;">
+                        <strong style="display: block; margin-bottom: 5px;">专家建议：</strong>
+                        <span style="font-size: 0.9rem; color: var(--text-light);">针对每个投递的职位，微调简历中的关键词，确保与职位描述（JD）高度匹配。</span>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 右侧：侧边栏工具 -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">面试高频问答</h3>
+                    <ul class="tips-list">
+                        <li>
+                            <h4>你为什么离职？</h4>
+                            <p>建议从寻求更好发展空间、学习新技能等积极角度回答，避免抱怨前公司。</p>
+                        </li>
+                        <li>
+                            <h4>你的优缺点是什么？</h4>
+                            <p>优点要具体（如：执行力强），缺点要真实但可控（如：有时过于追求完美）。</p>
+                        </li>
+                        <li>
+                            <h4>你期望薪资是多少？</h4>
+                            <p>先了解市场行情，给出一个合理的区间，并表示愿意根据能力面谈。</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">名企招聘动态</h3>
+                    <ul style="font-size: 0.9rem; color: var(--text-main);">
+                        <li style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f3f4f6;">
+                            <strong>腾讯</strong> - 产品运营岗急招<br>
+                            <span style="color: var(--text-light); font-size: 0.8rem;">薪资：25k-40k</span>
+                        </li>
+                        <li style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f3f4f6;">
+                            <strong>阿里巴巴</strong> - 数据分析师<br>
+                            <span style="color: var(--text-light); font-size: 0.8rem;">薪资：20k-35k</span>
+                        </li>
+                        <li style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f3f4f6;">
+                            <strong>字节跳动</strong> - 商务BD<br>
+                            <span style="color: var(--text-light); font-size: 0.8rem;">薪资：18k-30k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>加入求职交流群</h3>
+                    <p>获取最新面试真题与内推机会</p>
+                    <a href="#" class="btn" style="background: white; color: var(--primary-color);">立即扫码</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于职来职往</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        本站致力于整理江苏卫视《职来职往》节目的精彩片段与求职技巧分享。我们相信，每一个求职者都值得被认真对待，每一次面试都是成长的契机。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">视频库</a></li>
+                        <li><a href="#">面试技巧</a></li>
+                        <li><a href="#">名企招聘</a></li>
+                        <li><a href="#">求职论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">江苏卫视官网</a></li>
+                        <li><a href="#">前程无忧</a></li>
+                        <li><a href="#">智联招聘</a></li>
+                        <li><a href="#">BOSS直聘</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>合作邮箱：contact@example.com</li>
+                        <li>用户反馈：feedback@example.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 职来职往资源站. All Rights Reserved. 本站为资源整理与学习交流性质，非江苏卫视官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
