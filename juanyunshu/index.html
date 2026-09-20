@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卷云舒 - 原创古风文学与生活美学分享平台。提供精选古风小说、散文随笔、茶道茶艺知识及传统文化美学鉴赏，打造属于你的精神栖息地。">
+    <meta name="keywords" content="卷云舒,古风文学,散文随笔,茶道,传统文化,生活美学">
+    <title>卷云舒 - 原创古风文学与生活美学分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5c7c8a;
+            --secondary-color: #8fa3a7;
+            --accent-color: #c5bfa6;
+            --bg-color: #f7f5f2;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-light: #666666;
+            --border-color: #e8e4df;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-right: 8px;
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+            width: 200px;
+            transition: width 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            width: 250px;
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+            nav ul {
+                margin-top: 10px;
+                gap: 15px;
+                font-size: 14px;
+            }
+            .search-bar {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(92, 124, 138, 0.7), rgba(92, 124, 138, 0.5)), url('https://picsum.photos/seed/clouds/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::before, .section-header h2::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+
+        .section-header h2::before { left: -50px; }
+        .section-header h2::after { right: -50px; }
+
+        .section-header p {
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        /* Features / Philosophy Section */
+        .features {
+            background-color: #fff;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Tea & Lifestyle Section */
+        .tea-section {
+            background-color: #f0efe9;
+        }
+
+        .tea-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tea-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 10px 10px 0 var(--accent-color);
+        }
+
+        .tea-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .tea-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            background-color: rgba(92, 124, 138, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .tea-grid {
+                grid-template-columns: 1fr;
+            }
+            .tea-image {
+                order: -1;
+            }
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: var(--text-main);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #b0a894;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #3d3d3d;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>☁</span>卷云舒
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#novels">古风小说</a></li>
+                    <li><a href="#essays">散文随笔</a></li>
+                    <li><a href="#tea">茶道生活</a></li>
+                    <li><a href="#gallery">美学图集</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索文章、作者或关键词...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>卷云舒</h1>
+                <p>于喧嚣中寻一处静谧，于文字间品一杯清茶。这里是原创古风文学与生活美学的栖息地，邀您共赏云卷云舒之美。</p>
+                <a href="#novels" class="btn">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section-padding features">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="feature-item">
+                        <div class="feature-icon">✒️</div>
+                        <h3>原创古风</h3>
+                        <p>汇聚众多古风写手，为您呈现穿越时空的细腻情感与宏大的历史画卷。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍵</div>
+                        <h3>生活美学</h3>
+                        <p>分享茶道、花艺、香道等传统生活美学，教您在快节奏中慢下来。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <h3>深度阅读</h3>
+                        <p>提供高质量的散文随笔与读书笔记，滋养心灵，提升审美。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Novels -->
+        <section id="novels" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门古风小说</h2>
+                    <p>精选最新完结与连载中的古风佳作</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/novel1/400/300" alt="古风小说封面">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">仙侠 · 穿越重生</div>
+                            <h3 class="card-title"><a href="#">云深不知处：仙途漫漫</a></h3>
+                            <p class="card-desc">她本是凡间一缕孤魂，却意外踏入修真界，在云深不知处遇见了那个注定纠缠一生的少年。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <img src="https://picsum.photos/seed/avatar1/50/50" class="author-avatar" alt="作者头像">
+                                    <span>云中书生</span>
+                                </div>
+                                <span>1.2w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/novel2/400/300" alt="古风小说封面">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">权谋 · 宫廷侯爵</div>
+                            <h3 class="card-title"><a href="#">凤临天下：谋定天下</a></h3>
+                            <p class="card-desc">她以一介女流之身入宫，步步为营，在尔虞我诈的朝堂之上，誓要为自己争得一片天地。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <img src="https://picsum.photos/seed/avatar2/50/50" class="author-avatar" alt="作者头像">
+                                    <span>墨染青衣</span>
+                                </div>
+                                <span>8900 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/novel3/400/300" alt="古风小说封面">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-meta">言情 · 治愈系</div>
+                            <h3 class="card-title"><a href="#">岁月长歌：故人归</a></h3>
+                            <p class="card-desc">这是一个关于等待与重逢的故事，在漫长的岁月中，唯有爱与美食不可辜负。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <img src="https://picsum.photos/seed/avatar3/50/50" class="author-avatar" alt="作者头像">
+                                    <span>素手纤纤</span>
+                                </div>
+                                <span>2.1w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tea & Lifestyle -->
+        <section id="tea" class="section-padding tea-section">
+            <div class="container">
+                <div class="tea-grid">
+                    <div class="tea-image">
+                        <img src="https://picsum.photos/seed/tea/800/600" alt="品茶图">
+                    </div>
+                    <div class="tea-content">
+                        <h3>一期一会：茶道与慢生活</h3>
+                        <p>在“卷云舒”，我们相信生活需要仪式感。茶，不仅仅是一种饮品，更是一种心境。通过学习茶道，我们学会在冲泡的过程中专注当下，在品茗的时刻感受宁静。</p>
+                        <p>这里定期举办线上茶会，分享各种名茶的特点与冲泡技巧，更有茶友分享生活中的小确幸，让每一天都如茶香般悠长。</p>
+                        <div class="tag-list">
+                            <span class="tag">绿茶</span>
+                            <span class="tag">红茶</span>
+                            <span class="tag">普洱</span>
+                            <span class="tag">紫砂壶</span>
+                            <span class="tag">生活美学</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essays & Articles -->
+        <section id="essays" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>散文随笔</h2>
+                    <p>记录点滴感悟，书写人间烟火</p>
+                </div>
+                <div class="grid-2">
+                    <article class="card">
+                        <div class="card-body">
+                            <div class="card-meta">随笔 · 2023-10-15</div>
+                            <h3 class="card-title"><a href="#">秋日的私语：关于落叶与时光</a></h3>
+                            <p class="card-desc">秋天是收获的季节，也是告别的时候。走在铺满落叶的小径上，听着脚下的脆响，仿佛听到了时光流逝的声音...</p>
+                            <a href="#" class="btn" style="margin-top:10px; font-size:14px; padding: 6px 15px;">阅读全文</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <div class="card-meta">影评 · 2023-10-12</div>
+                            <h3 class="card-title"><a href="#">电影《长安三万里》：重温大唐盛世</a></h3>
+                            <p class="card-desc">影片以高适的回忆为主线，串联起李白的一生。那些耳熟能详的诗词，在画面中变得鲜活，带我们重回那个诗酒风流的时代...</p>
+                            <a href="#" class="btn" style="margin-top:10px; font-size:14px; padding: 6px 15px;">阅读全文</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>订阅我们的周刊</h2>
+                <p>每周一推送精选古风美文与茶道资讯，不错过任何一份美好。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！');">
+                    <input type="email" placeholder="请输入您的电子邮箱" required>
+                    <button type="submit">订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于卷云舒</h4>
+                    <p>卷云舒是一个致力于传播中国传统文化与生活美学的原创平台。我们希望通过文字与影像，让更多人感受到中式美学的独特韵味。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#novels">古风小说</a></li>
+                        <li><a href="#essays">散文随笔</a></li>
+                        <li><a href="#tea">茶道生活</a></li>
+                        <li><a href="#gallery">美学图集</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">中国古典文学网</a></li>
+                        <li><a href="#">茶文化研究会</a></li>
+                        <li><a href="#">汉服文化协会</a></li>
+                        <li><a href="#">古籍修复技艺</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@juanyunshu.com</li>
+                        <li>微信：juanyunshu_official</li>
+                        <li>地址：互联网大道创意园区A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 卷云舒. All Rights Reserved. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
