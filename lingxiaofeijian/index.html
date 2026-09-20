@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="凌霄飞剑，探索玄幻武侠世界中的神兵利器、修炼法门与江湖传说。提供凌霄飞剑设定解析、同人文推荐及修仙社区交流。">
+    <meta name="keywords" content="凌霄飞剑,玄幻小说,武侠修仙,神兵利器,玄幻设定">
+    <title>凌霄飞剑-玄幻神兵设定与修仙指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #7b2cbf;
+            --secondary-color: #9d4edd;
+            --accent-color: #e0aaff;
+            --text-main: #1a1a2e;
+            --text-light: #e0e0e0;
+            --bg-body: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --border-color: #2a2a4a;
+            --gold: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: rgba(15, 15, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #2a1b4e 0%, #0f0f1a 70%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="white"/></svg>');
+            background-size: 200px;
+            animation: rotateBg 60s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Weapon Showcase */
+        .weapon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .weapon-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .weapon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(123, 44, 191, 0.3);
+            border-color: var(--secondary-color);
+        }
+
+        .weapon-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, #2a2a4a, #1a1a2e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .weapon-img::after {
+            content: '⚔️';
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+
+        .weapon-info {
+            padding: 25px;
+        }
+
+        .weapon-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .weapon-type {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .weapon-desc {
+            font-size: 0.95rem;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .weapon-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-val {
+            display: block;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* Concepts Section */
+        .concepts-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .concept-text h3 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .concept-text p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .concept-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .concept-list li::before {
+            content: '✦';
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .concept-visual {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .concept-visual .chart-placeholder {
+            width: 100%;
+            height: 300px;
+            background: radial-gradient(circle, rgba(157,78,221,0.2) 0%, transparent 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .bar-row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bar-label {
+            width: 80px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 10px;
+            background: #2a2a4a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 5px;
+            width: 0;
+            animation: growBar 1.5s ease-out forwards;
+        }
+
+        @keyframes growBar {
+            to { width: var(--w); }
+        }
+
+        /* Community/FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-q {
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Footer */
+        footer {
+            background: #050510;
+            border-top: 1px solid var(--border-color);
+            padding: 50px 0 20px;
+            margin-top: 60px;
+            color: #666;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a2e;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+            .concepts-wrapper { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>⚔️</span> 凌霄飞剑
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">神兵图鉴</a></li>
+                    <li><a href="#concepts">修炼法门</a></li>
+                    <li><a href="#community">江湖百科</a></li>
+                </ul>
+            </nav>
+            <a href="#community" class="cta-btn">加入宗门</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">高阶剑修</span>
+                    <span class="tag">御空而行</span>
+                    <span class="tag">破虚一击</span>
+                </div>
+                <h1>凌霄飞剑</h1>
+                <p>以九天雷霆淬体，借太虚罡气化形。传说中能斩断虚空、直冲云霄的绝世神兵，是每一位剑修梦寐以求的终极飞剑。</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#weapons" class="cta-btn" style="padding: 12px 30px; font-size: 1rem;">查看神兵</a>
+                    <a href="#concepts" style="padding: 12px 30px; border: 1px solid var(--border-color); border-radius: 20px; color: white;">修炼指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weapon Showcase -->
+        <section id="weapons" class="container">
+            <div class="section-header">
+                <h2>神兵图鉴</h2>
+                <p>收录江湖中与“凌霄”相关的飞剑设定与品阶解析</p>
+            </div>
+            <div class="weapon-grid">
+                <!-- Weapon 1 -->
+                <article class="weapon-card">
+                    <div class="weapon-img"></div>
+                    <div class="weapon-info">
+                        <span class="weapon-type">天阶 · 上品</span>
+                        <h3 class="weapon-title">紫霄御雷剑</h3>
+                        <p class="weapon-desc">由万年雷击木锻造，剑身蕴含狂暴雷属性，挥动时伴有九霄雷鸣，专破阴邪护盾。</p>
+                        <div class="weapon-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">999+</span>
+                                <span class="stat-label">攻击力</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">100%</span>
+                                <span class="stat-label">雷抗</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">御空</span>
+                                <span class="stat-label">特性</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Weapon 2 -->
+                <article class="weapon-card">
+                    <div class="weapon-img"></div>
+                    <div class="weapon-info">
+                        <span class="weapon-type">地阶 · 中品</span>
+                        <h3 class="weapon-title">流光寒霜剑</h3>
+                        <p class="weapon-desc">剑身如水银泻地，挥舞时留下一道道冰蓝色的残影。附带极寒减速效果，令对手寸步难行。</p>
+                        <div class="weapon-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">850</span>
+                                <span class="stat-label">攻击力</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">30%</span>
+                                <span class="stat-label">减速</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">连击</span>
+                                <span class="stat-label">特性</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Weapon 3 -->
+                <article class="weapon-card">
+                    <div class="weapon-img"></div>
+                    <div class="weapon-info">
+                        <span class="weapon-type">玄阶 · 下品</span>
+                        <h3 class="weapon-title">青木长锋</h3>
+                        <p class="weapon-desc">看似普通的木剑，实则蕴含生机，可自动修复剑身损伤，并回复使用者的灵力。</p>
+                        <div class="weapon-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">600</span>
+                                <span class="stat-label">攻击力</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">Auto</span>
+                                <span class="stat-label">修复</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">续航</span>
+                                <span class="stat-label">特性</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Concepts Section -->
+        <section id="concepts" style="background: #131324;">
+            <div class="container concepts-wrapper">
+                <div class="concept-text">
+                    <h3>凌霄飞剑的修炼核心</h3>
+                    <p>不同于凡铁，飞剑讲究“人剑合一”。凌霄飞剑之所以名为“凌霄”，关键在于驾驭者能否将自身灵力灌注剑身，使其脱离束缚，自由浮空并高速旋转。</p>
+                    <ul class="concept-list">
+                        <li><strong>灵力灌注：</strong>需使用高纯度灵石或本命精血温养，激活剑中灵智。</li>
+                        <li><strong>剑意养成：</strong>剑修需经历“观剑、听剑、悟剑”三阶段，形成独特的剑气。</li>
+                        <li><strong>破空之术：</strong>飞剑速度越快，空气阻力越大，剑修需掌握御风诀以减轻反作用力。</li>
+                    </ul>
+                </div>
+                <div class="concept-visual">
+                    <h4 style="color:white; margin-bottom:20px;">灵力属性分布图</h4>
+                    <div class="chart-placeholder">
+                        <div class="bar-group">
+                            <div class="bar-row">
+                                <span class="bar-label">雷系</span>
+                                <div class="bar-track"><div class="bar-fill" style="--w: 85%"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">冰系</span>
+                                <div class="bar-track"><div class="bar-fill" style="--w: 60%"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">火系</span>
+                                <div class="bar-track"><div class="bar-fill" style="--w: 45%"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">金系</span>
+                                <div class="bar-track"><div class="bar-fill" style="--w: 70%"></div></div>
+                            </div>
+                            <div class="bar-row">
+                                <span class="bar-label">土系</span>
+                                <div class="bar-track"><div class="bar-fill" style="--w: 30%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community/FAQ -->
+        <section id="community" class="container">
+            <div class="section-header">
+                <h2>江湖百科</h2>
+                <p>关于凌霄飞剑的常见疑问与修行心得</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q">Q：凡人可以使用凌霄飞剑吗？</div>
+                    <div class="faq-a">A：不可以。飞剑需由灵力驱动，凡人肉体凡胎无法承受灵力反噬，强行使用会导致经脉寸断。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q：飞剑可以远程操控吗？</div>
+                    <div class="faq-a">A：初级飞剑需剑修贴身近战，高阶飞剑如“凌霄”系列可远程御剑飞行，但距离受限于剑修的灵力浓度。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q：剑身受损如何修复？</div>
+                    <div class="faq-a">A：建议使用“补天石”或前往宗门炼器堂进行修复。若剑身碎裂，则需重铸。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q：如何提升飞剑的攻击速度？</div>
+                    <div class="faq-a">A：主要通过修炼“缩地成寸”类身法，以及注入更高级别的灵力，并打磨剑身光泽度。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于凌霄飞剑</h4>
+                    <p style="font-size: 0.9rem; color: #888;">本站致力于整理玄幻武侠设定，为剑修爱好者提供参考与交流平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#weapons">神兵图鉴</a></li>
+                        <li><a href="#concepts">修炼指南</a></li>
+                        <li><a href="#community">社区问答</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关设定</h4>
+                    <ul>
+                        <li><a href="#">御剑术</a></li>
+                        <li><a href="#">剑阵</a></li>
+                        <li><a href="#">灵石</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 凌霄飞剑设定馆. All rights reserved. 纯粹的玄幻武侠爱好者社区.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
